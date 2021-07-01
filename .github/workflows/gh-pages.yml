@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
     inputs:
       latitude:
-        description: 'Latitude',
+        description: 'Latitude'
       longitude:
         description: 'Longitude'
 
