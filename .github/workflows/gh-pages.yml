@@ -22,6 +22,10 @@ on:
         description: 'Latitude'
       longitude:
         description: 'Longitude'
+      address:
+        description: 'Address'
+      time:
+        description: 'Time'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -41,6 +45,9 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
+      
+      - name: Write current position
+      - run: node script.js '${{ github.event.inputs.latitude }}' '${{ github.event.inputs.longitude }}' '${{ github.event.inputs.address }}' '${{ github.event.inputs.time }}'
 
       - uses: actions/cache@v2
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
