@@ -26,7 +26,7 @@ const RoadMap = () => {
   const currentPostion = positions[positions.length - 1];
   console.log(currentPostion);
 
-  const addControlHandler = event => {
+  const addControlHandler = (event) => {
     const map = event && event.target;
     if (map) {
       map.addControl(
@@ -34,7 +34,10 @@ const RoadMap = () => {
           defaultLanguage: 'zh',
         })
       );
-      map.setLayoutProperty('country-label-lg', 'text-field', ['get', 'name_zh']);
+      map.setLayoutProperty('country-label-lg', 'text-field', [
+        'get',
+        'name_zh',
+      ]);
     }
   };
   return (
@@ -42,13 +45,19 @@ const RoadMap = () => {
       {...viewport}
       onLoad={addControlHandler}
       mapboxApiAccessToken={MAPBOX_TOKEN}
-      onViewportChange={nextViewport => setViewport(nextViewport)}
+      onViewportChange={(nextViewport) => setViewport(nextViewport)}
     >
-      <Marker latitude={CITIES.start.latitude} longitude={CITIES.start.longitude}>
+      <Marker
+        latitude={CITIES.start.latitude}
+        longitude={CITIES.start.longitude}
+      >
         <StartIcon className="flag-icon" />
       </Marker>
       {currentPostion && (
-        <Marker latitude={Number(currentPostion.latitude)} longitude={Number(currentPostion.longitude)}>
+        <Marker
+          latitude={Number(currentPostion.latitude)}
+          longitude={Number(currentPostion.longitude)}
+        >
           <CurrentIcon className="flag-icon" />
         </Marker>
       )}
