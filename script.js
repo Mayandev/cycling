@@ -5,8 +5,8 @@ const [latitude, longitude, address, time] = process.argv.slice(2);
 
 if (latitude) {
   originPosition.push({
-    latitude,
-    longitude,
+    latitude: Number(latitude),
+    longitude: Number(longitude),
     address,
     time,
   });

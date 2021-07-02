@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/cycling`,
   siteMetadata: {
     title: `My Cycling Trip`,
     description: `Recording my cycling trip from ShangHai to Wuhan.`,
@@ -13,6 +14,12 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: './src/static/',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/images/',
       },
     },
     `gatsby-transformer-sharp`,

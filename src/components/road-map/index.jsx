@@ -2,13 +2,17 @@ import * as React from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import StartIcon from '/assets/flag-start.svg';
 import EndIcon from '/assets/flag-end.svg';
+import CurrentIcon from '/assets/current-location.svg';
+
 import { MAPBOX_TOKEN, CITIES } from '../../common/const';
+import usePositions from '../../hooks/usePositions';
 import './index.scss';
 
-function RoadMap() {
+const RoadMap = () => {
   const [viewport, setViewport] = useState({
     width: 1000,
     height: 500,
@@ -17,8 +21,12 @@ function RoadMap() {
     zoom: 8,
     pitch: 50,
   });
+  const { positions } = usePositions();
 
-  const addControlHandler = (event) => {
+  const currentPostion = positions[positions.length - 1];
+  console.log(currentPostion);
+
+  const addControlHandler = event => {
     const map = event && event.target;
     if (map) {
       map.addControl(
@@ -26,31 +34,29 @@ function RoadMap() {
           defaultLanguage: 'zh',
         })
       );
-      map.setLayoutProperty('country-label-lg', 'text-field', [
-        'get',
-        'name_zh',
-      ]);
+      map.setLayoutProperty('country-label-lg', 'text-field', ['get', 'name_zh']);
     }
   };
-  const size = 20;
   return (
     <ReactMapGL
       {...viewport}
       onLoad={addControlHandler}
       mapboxApiAccessToken={MAPBOX_TOKEN}
-      onViewportChange={(nextViewport) => setViewport(nextViewport)}
+      onViewportChange={nextViewport => setViewport(nextViewport)}
     >
-      <Marker
-        latitude={CITIES.start.latitude}
-        longitude={CITIES.start.longitude}
-      >
+      <Marker latitude={CITIES.start.latitude} longitude={CITIES.start.longitude}>
         <StartIcon className="flag-icon" />
       </Marker>
+      {currentPostion && (
+        <Marker latitude={Number(currentPostion.latitude)} longitude={Number(currentPostion.longitude)}>
+          <CurrentIcon className="flag-icon" />
+        </Marker>
+      )}
       <Marker latitude={CITIES.end.latitude} longitude={CITIES.end.longitude}>
         <EndIcon className="flag-icon" />
       </Marker>
     </ReactMapGL>
   );
-}
+};
 
 export default RoadMap;

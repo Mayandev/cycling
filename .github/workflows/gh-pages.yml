@@ -59,7 +59,7 @@ jobs:
       - run: |
           node script.js '${{ github.event.inputs.latitude }}' '${{ github.event.inputs.longitude }}' '${{ github.event.inputs.address }}' '${{ github.event.inputs.time }}'
       - run: |
-          yarn build
+          yarn build --prefix-paths
 
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
