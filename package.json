@@ -24,7 +24,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-map-gl": "^6.1.16"
+    "react-map-gl": "^5.2.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
