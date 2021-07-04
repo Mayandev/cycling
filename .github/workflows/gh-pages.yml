@@ -65,7 +65,7 @@ jobs:
           git add .
           git commit -m "chore: update current location"
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
       - run: |
