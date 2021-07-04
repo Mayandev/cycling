@@ -1,12 +1,11 @@
 module.exports = {
   pathPrefix: `/cycling`,
   siteMetadata: {
-    title: `My Cycling Trip`,
+    title: `Mingyuan's Cycling Trip`,
     description: `Recording my cycling trip from ShangHai to Wuhan.`,
     author: `@mayandev`,
   },
   plugins: [
-    'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,

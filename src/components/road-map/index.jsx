@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import StartIcon from '/assets/flag-start.svg';
 import EndIcon from '/assets/flag-end.svg';
@@ -14,7 +13,7 @@ import './index.scss';
 
 const RoadMap = () => {
   const [viewport, setViewport] = useState({
-    width: 1000,
+    width: '100%',
     height: 500,
     latitude: 31.150826,
     longitude: 121.389456,
@@ -24,7 +23,6 @@ const RoadMap = () => {
   const { positions } = usePositions();
 
   const currentPostion = positions[positions.length - 1];
-  console.log(currentPostion);
 
   const addControlHandler = (event) => {
     const map = event && event.target;
