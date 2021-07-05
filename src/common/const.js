@@ -59,3 +59,5 @@ export const RoutePlans = [
     destinationLink: 'https://www.amap.com/place/B001B0ISPB',
   },
 ];
+
+export const MAIN_COLOR = 'rgb(102, 51, 153)';

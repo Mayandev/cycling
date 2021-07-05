@@ -7,7 +7,10 @@ const CurrentPosition = () => {
   return (
     <>
       <h3>当前位置</h3>
-      <div>{currentPostion.address}</div>
+      <div>
+        {currentPostion.address}
+        {`（数据更新于：${currentPostion.time}）`}
+      </div>
     </>
   );
 };

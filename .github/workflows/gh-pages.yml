@@ -36,9 +36,31 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
+      - name: Configure pip cache
+        uses: actions/cache@v1
+        id: pip-cache
+        with:
+          path: venv
+          key: pip-1-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            pip-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+        if: steps.pip-cache.outputs.cache-hit != 'true'
+      - name: Run sync Strava script
+        if: env.RUN_TYPE == 'strava'
+        run: |
+          python scripts/strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
 
