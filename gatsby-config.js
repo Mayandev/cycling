@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/cycling`,
   siteMetadata: {
-    title: `Mingyuan's Cycling Trip`,
+    title: `Cycling Trip`,
     description: `Recording my cycling trip from ShangHai to Wuhan.`,
     author: `@mayandev`,
   },
