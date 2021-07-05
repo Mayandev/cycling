@@ -62,8 +62,7 @@ jobs:
         uses: github-actions-x/commit@v2.6
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
-          commit-message: "Add new runs"
-          files: activities src/static/ scripts/ assets/
+          commit-message: "Add new rides"
           rebase: 'true'
           name: 'GitHub Action'
           email: 'actions@github.com'
@@ -92,8 +91,7 @@ jobs:
         uses: github-actions-x/commit@v2.6
         with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
-          commit-message: "Add new runs"
-          files: activities src/static/ scripts/ assets/
+          commit-message: "Add new rides"
           rebase: 'true'
           name: 'GitHub Action'
           email: 'actions@github.com'
