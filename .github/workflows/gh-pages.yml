@@ -63,7 +63,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "chore: update route"
+          git commit -m "chore: [bot]update route --allow-empty"
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Setup Node.js environment
@@ -90,7 +90,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "chore: update current location"
+          git commit -m "chore: [bot]update current location --allow-empty"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
