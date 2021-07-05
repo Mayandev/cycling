@@ -16,6 +16,7 @@
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sass": "^4.7.1",
     "gatsby-plugin-sharp": "^3.6.0",
+    "gatsby-plugin-valine": "^1.0.2",
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-json": "^3.8.0",
     "gatsby-transformer-sharp": "^3.6.0",

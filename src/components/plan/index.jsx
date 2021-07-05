@@ -21,7 +21,7 @@ const RoutePlan = () => (
         </thead>
         <tbody>
           {RoutePlans.map((plan, index) => (
-            <tr>
+            <tr key={index}>
               <td>
                 <span>Day{index + 1}</span>
               </td>
