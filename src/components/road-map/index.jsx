@@ -12,21 +12,22 @@ import usePositions from '../../hooks/usePositions';
 import useActivities from '../../hooks/useActivities';
 import { geoJsonForRide } from '../../common/utils';
 import './index.scss';
-
+const SIZE = 20;
+const UNIT = 'px';
 const RoadMap = () => {
-  const [viewport, setViewport] = useState({
-    width: '100%',
-    height: 500,
-    latitude: 31.150826,
-    longitude: 121.389456,
-    zoom: 8,
-    pitch: 50,
-  });
   const { positions } = usePositions();
   const { activities } = useActivities();
   const geoData = geoJsonForRide(activities);
   const currentPostion = positions[positions.length - 1];
-
+  const { latitude = 31.150826, longitude = 121.389456 } = currentPostion;
+  const [viewport, setViewport] = useState({
+    width: '100%',
+    height: 500,
+    latitude,
+    longitude,
+    zoom: 8,
+    pitch: 50,
+  });
   const addControlHandler = (event) => {
     const map = event && event.target;
     if (map) {
@@ -65,6 +66,9 @@ const RoadMap = () => {
       <Marker
         latitude={CITIES.start.latitude}
         longitude={CITIES.start.longitude}
+        style={{
+          transform: `translate(${SIZE / 2 + UNIT}, ${SIZE / 2 + UNIT}`,
+        }}
       >
         <StartIcon className="flag-icon" />
       </Marker>
@@ -72,11 +76,20 @@ const RoadMap = () => {
         <Marker
           latitude={Number(currentPostion.latitude)}
           longitude={Number(currentPostion.longitude)}
+          style={{
+            transform: `translate(${SIZE / 2 + UNIT}, ${SIZE / 2 + UNIT}`,
+          }}
         >
           <CurrentIcon className="flag-icon" />
         </Marker>
       )}
-      <Marker latitude={CITIES.end.latitude} longitude={CITIES.end.longitude}>
+      <Marker
+        style={{
+          transform: `translate(${SIZE / 2 + UNIT}, ${SIZE / 2 + UNIT}`,
+        }}
+        latitude={CITIES.end.latitude}
+        longitude={CITIES.end.longitude}
+      >
         <EndIcon className="flag-icon" />
       </Marker>
     </ReactMapGL>
