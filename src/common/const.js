@@ -34,14 +34,14 @@ export const RoutePlans = [
     destinationLink: 'https://www.amap.com/place/B02330O9XI',
   },
   {
-    distance: '130km',
-    destination: '池州',
-    destinationLink: 'https://www.amap.com/place/B0FFGXTPKT',
+    distance: '94km',
+    destination: '铜陵',
+    destinationLink: 'https://surl.amap.com/5LzTigdh5RL',
   },
   {
-    distance: '110km',
-    destination: '安庆',
-    destinationLink: 'https://www.amap.com/place/B0G0KOVNZ1',
+    distance: '107km',
+    destination: '池州',
+    destinationLink: 'https://surl.amap.com/5MjDiJ7V1pJ',
   },
   {
     distance: '88km',
