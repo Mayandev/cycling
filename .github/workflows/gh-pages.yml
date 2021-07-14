@@ -95,10 +95,6 @@ jobs:
           rebase: 'true'
           name: 'GitHub Action'
           email: 'actions@github.com'
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
       - run: |
           yarn build --prefix-paths
 
