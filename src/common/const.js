@@ -34,24 +34,24 @@ export const RoutePlans = [
     destinationLink: 'https://www.amap.com/place/B02330O9XI',
   },
   {
-    distance: '130km',
+    distance: '94km',
+    destination: '铜陵',
+    destinationLink: 'https://surl.amap.com/5LzTigdh5RL',
+  },
+  {
+    distance: '107km',
     destination: '池州',
-    destinationLink: 'https://www.amap.com/place/B0FFGXTPKT',
+    destinationLink: 'https://surl.amap.com/5MjDiJ7V1pJ',
   },
   {
-    distance: '110km',
-    destination: '安庆',
-    destinationLink: 'https://www.amap.com/place/B0G0KOVNZ1',
+    distance: '118km',
+    destination: '安庆市宿松县',
+    destinationLink: 'https://surl.amap.com/2AfVn2t3azi',
   },
   {
-    distance: '88km',
-    destination: '黄冈市黄梅县',
-    destinationLink: 'https://www.amap.com/place/B0HDTMLQ2Q',
-  },
-  {
-    distance: '89km',
+    distance: '112km',
     destination: '黄冈市浠水县',
-    destinationLink: 'https://www.amap.com/place/B0FFIGYDUQ',
+    destinationLink: 'https://surl.amap.com/2AD36ONfaE2',
   },
   {
     distance: '99km',
