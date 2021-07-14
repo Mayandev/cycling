@@ -73,6 +73,7 @@ const RoadMap = () => {
         <Marker
           latitude={Number(currentPostion.latitude)}
           longitude={Number(currentPostion.longitude)}
+          styles={{ width: '1px' }}
         >
           <CurrentIcon className="flag-icon" />
         </Marker>
