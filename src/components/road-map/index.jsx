@@ -66,9 +66,6 @@ const RoadMap = () => {
       <Marker
         latitude={CITIES.start.latitude}
         longitude={CITIES.start.longitude}
-        style={{
-          transform: `translate(${SIZE / 2 + UNIT}, ${SIZE / 2 + UNIT}`,
-        }}
       >
         <StartIcon className="flag-icon" />
       </Marker>
@@ -76,20 +73,11 @@ const RoadMap = () => {
         <Marker
           latitude={Number(currentPostion.latitude)}
           longitude={Number(currentPostion.longitude)}
-          style={{
-            transform: `translate(${SIZE / 2 + UNIT}, ${SIZE / 2 + UNIT}`,
-          }}
         >
           <CurrentIcon className="flag-icon" />
         </Marker>
       )}
-      <Marker
-        style={{
-          transform: `translate(${SIZE / 2 + UNIT}, ${SIZE / 2 + UNIT}`,
-        }}
-        latitude={CITIES.end.latitude}
-        longitude={CITIES.end.longitude}
-      >
+      <Marker latitude={CITIES.end.latitude} longitude={CITIES.end.longitude}>
         <EndIcon className="flag-icon" />
       </Marker>
     </ReactMapGL>
